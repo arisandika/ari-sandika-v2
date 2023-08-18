@@ -1,0 +1,46 @@
+.contact-container {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contact-text {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-container a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; 
+  font-size: 3.75rem;
+  line-height: 1; 
+  text-align: center; 
+  text-decoration: underline; 
+  text-underline-offset: 12px; 
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+.contact-container a {
+  font-size: 6rem;
+  line-height: 1; 
+}
+}

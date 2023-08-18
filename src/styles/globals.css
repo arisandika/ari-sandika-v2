@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "power";
+  src: url("../fonts/PowerGroteskTrial-Heavy.woff2") format("woff2"),
+    url("../fonts/PowerGroteskTrial-Heavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "durer";
+  src: url("../fonts/durer-webfont.woff2") format("woff2"),
+    url("../fonts/durer-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montreal";
+  src: url("../fonts/ppneuemontreal-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --light: #f2f2f2;
+  --dark: #1c1d20;
+  --primary: #70ff4d;
+  --tertiary: #455ce9;
+  --secondary: #8e8e90;
+  --zinc: #27272a;
+  --font-primary: "power";
+  --font-secondary: "montreal";
+  --font-trier: "durer";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  color: var(--dark);
+  background-color: var(--light);
+  font-family: var(--font-secondary), sans-serif;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    margin-top: -60px;
+  }
+}
+
+.slide-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark);
+  z-index: 100;
+  transform-origin: bottom;
+}
+
+.slide-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark);
+  z-index: 100;
+  transform-origin: top;
+}
