@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CustomCanvasLink } from "@/utils/hooks/routerCustom";
 import styled from "@/utils/styled";
 import { useRouter } from "next/router";
-import { AnimatedRi, AnimatedRightToLeft, AnimatedRightToLeftghtToLeftAnimatedRightToLeft } from "@/utils/motion";
+import { AnimatedRi, AnimatedLeftToRight, AnimatedLeftTo, AnimatedLeftToRightRightghtToLeftAnimatedLeftToRight } from "@/utils/motion";
 
 const ButtonNav = () => {
   const router = useRouter();
@@ -74,30 +74,30 @@ const ButtonNav = () => {
             <span className={`text-sideline`} />
           </div>
           <div className="canvas-link-container space-y-3">
-            <AnimatedRightToLeft delay={0.1}>
+            <AnimatedLeftToRight delay={0.1}>
               <CustomCanvasLink href="/" title="Home" toggle={handleClick} />
-            </AnimatedRightToLeft>
-            <AnimatedRightToLeft delay={0.2}>
+            </AnimatedLeftToRight>
+            <AnimatedLeftToRight delay={0.2}>
               <CustomCanvasLink
                 href="/projects"
                 title="Projects"
                 toggle={handleClick}
               />
-            </AnimatedRightToLeft>
-            <AnimatedRightToLeft delay={0.3}>
+            </AnimatedLeftToRight>
+            <AnimatedLeftToRight delay={0.3}>
               <CustomCanvasLink
                 href="/about"
                 title="About"
                 toggle={handleClick}
               />
-            </AnimatedRightToLeft>
-            <AnimatedRightToLeft delay={0.4}>
+            </AnimatedLeftToRight>
+            <AnimatedLeftToRight delay={0.4}>
               <CustomCanvasLink
                 href="/contact"
                 title="Contact"
                 toggle={handleClick}
               />
-            </AnimatedRightToLeft>
+            </AnimatedLeftToRight>
           </div>
           <div className={`text-canvas`}>
             Social
