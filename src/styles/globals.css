@@ -25,16 +25,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "montreal-thin";
+  src: url("../fonts/ppneuemontreal-thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --light: #f2f2f2;
   --dark: #1c1d20;
-  --primary: #70ff4d;
+  --primary: #A7E92F;
   --tertiary: #455ce9;
   --secondary: #8e8e90;
   --zinc: #27272a;
-  --font-primary: "power";
-  --font-secondary: "montreal";
-  --font-trier: "durer";
+  --font-power: "power";
+  --font-montreal: "montreal";
+  --font-montreal-thin: "montreal-thin";
+  --font-durer: "durer";
 }
 
 ::-webkit-scrollbar {
@@ -47,8 +55,9 @@ html {
 
 .main {
   color: var(--dark);
+  font-weight: 400;
   background-color: var(--light);
-  font-family: var(--font-secondary), sans-serif;
+  font-family: var(--font-montreal), Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 768px) {

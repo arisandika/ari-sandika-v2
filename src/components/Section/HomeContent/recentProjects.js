@@ -1,11 +1,15 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
-import AnimatedSection from "@/utils/motion";
 import { CustomButton } from "../../Button/buttonCustom";
 import data from "../../../utils/data";
+import {
+  AnimatedLeftToRight,
+  AnimatedRightToLeft,
+  AnimatedSection,
+} from "@/utils/motion";
 
 function RecentProjects() {
   const [cursorText, setCursorText] = useState("");
@@ -35,7 +39,7 @@ function RecentProjects() {
     },
     project: {
       opacity: 1,
-      backgroundColor: "#70FF4D",
+      backgroundColor: "#A7E92F",
       color: "#000",
       height: 65,
       width: 65,
@@ -82,40 +86,48 @@ function RecentProjects() {
           >
             <span className="cursorText">{cursorText}</span>
           </motion.div>
-          <Link href={`./${project.href}`}>
+          <Link
+            href={`${project.href}`}
+            target="_blank"
+            className="project-image"
+          >
             <ParallaxProvider>
-              <ParallaxBanner
-                layers={[
-                  { image: project.imageUrl, speed: -20 },
-                  { image: project.imageUrl, speed: -10 },
-                ]}
-                className="overlay-container"
-                onMouseEnter={projectEnter}
-                onMouseLeave={projectLeave}
-              >
-                <div className="image-overlay">
-                  <span className="cursorText">{cursorText}</span>
-                </div>
-              </ParallaxBanner>
+              <AnimatedLeftToRight>
+                <ParallaxBanner
+                  layers={[
+                    { image: project.imageUrl, speed: -20 },
+                    { image: project.imageUrl, speed: -10 },
+                  ]}
+                  className="overlay-container"
+                  onMouseEnter={projectEnter}
+                  onMouseLeave={projectLeave}
+                >
+                  <div className="image-overlay">
+                    <span className="cursorText">{cursorText}</span>
+                  </div>
+                </ParallaxBanner>
+              </AnimatedLeftToRight>
             </ParallaxProvider>
           </Link>
           <div className="card-project">
             <div className="card-project-col">
               <div className="card-project-title">
-                <AnimatedSection>{project.title}</AnimatedSection>
+                <AnimatedRightToLeft>{project.title}</AnimatedRightToLeft>
               </div>
               <div className="card-project-flex">
-                <AnimatedSection>{project.category}</AnimatedSection>
-                <div className="md:hidden">
-                  <AnimatedSection>{project.year}</AnimatedSection>
+                <AnimatedRightToLeft>{project.category}</AnimatedRightToLeft>
+                <div>
+                  <AnimatedRightToLeft>{project.year}</AnimatedRightToLeft>
                 </div>
               </div>
             </div>
             <div className="card-project-desc">
-              <AnimatedSection>{project.desc}</AnimatedSection>
+              <AnimatedRightToLeft>{project.desc}</AnimatedRightToLeft>
             </div>
-            <div className="card-project-year">
-              <AnimatedSection>{project.year}</AnimatedSection>
+            <div className="card-project-visit">
+              <a href={`${project.href}`} target="_blank">
+                <AnimatedRightToLeft>Visit Live →</AnimatedRightToLeft>
+              </a>
             </div>
           </div>
         </div>

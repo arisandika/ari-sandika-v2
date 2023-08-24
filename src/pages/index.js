@@ -1,4 +1,4 @@
-import Header from "@/components/Header/header";
+import Hero from "@/components/Hero/hero";
 import Layout from "@/components/layout";
 import SectionContent from "@/components/Section/HomeContent/sectionContent";
 import RecentProjects from "@/components/Section/HomeContent/recentProjects";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <Header />
+        <Hero />
       </Layout>
       <SectionContent />
       <RecentProjects />

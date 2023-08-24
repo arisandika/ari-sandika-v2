@@ -5,7 +5,7 @@ const data = [
     category: "Front End Development",
     desc: "Ari Film, seamlessly integrates with public APIs, allowing for the effortless retrieval of extensive film-related data.",
     imageUrl: "/images/projects/mockup-movies.jpg",
-    href: "arifilm",
+    href: "https://ari-film.netlify.app/",
   },
   {
     title: "Perpusline",

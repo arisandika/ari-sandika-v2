@@ -5,12 +5,13 @@
   padding-right: 1rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .container-section {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1.375rem;
+    padding-right: 1.375rem;
   }
 }
 
@@ -69,7 +70,7 @@
   }
 
   .grid-2 {
-    padding-right: 6rem;
+    padding-right: 8rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -98,26 +99,32 @@
   font-weight: 600;
   letter-spacing: 0.025em;
   text-transform: uppercase;
+  padding-bottom: 2rem;
 }
 
 .grid-project {
   display: grid;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
   gap: 1rem;
-  align-items: center;
+  align-items: start;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .grid-container-2 {
-    padding-right: 7rem;
+    padding-right: 9.5rem;
     justify-content: space-between;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
   .grid-project {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 2rem;
+  }
+
+  .project-image {
+    grid-column: span 3 / span 3;
   }
 }
 
@@ -125,9 +132,12 @@
   display: grid;
   gap: 0.75rem;
   justify-content: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 15px;
+  line-height: 1.25rem;
   color: var(--secondary);
+  font-family: var(--font-montreal-thin), Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .card-project-col {
@@ -138,9 +148,11 @@
 }
 
 .card-project-title {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: var(--dark);
+  font-family: var(--font-montreal), Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
 
 .card-project-flex {
@@ -149,13 +161,16 @@
   width: 100%;
 }
 
-.card-project-year {
-  display: none;
-  flex-direction: column;
-}
-
 .card-project-desc {
   text-align: justify;
+  font-size: 15px;
+  color: var(--dark);
+}
+
+.card-project-visit {
+  display: flex;
+  color: var(--dark);
+  font-size: 15px;
 }
 
 .more-project-container {
@@ -170,14 +185,20 @@
 
 @media (min-width: 768px) {
   .card-project {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    font-size: 0.875rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    font-size: 13px;
     line-height: 1.25rem;
   }
 
-  .card-project-year {
+  .card-project-desc {
+    text-align: justify;
+    font-size: 13px;
+  }
+
+  .card-project-visit {
     display: flex;
-    align-items: flex-end;
+    color: var(--dark);
+    font-size: 13px;
   }
 
   .more-project-container {
@@ -222,7 +243,7 @@
 
 @media (min-width: 768px) {
   .overlay-container {
-    aspect-ratio: 1.98/1;
+    aspect-ratio: 1.98/1.1;
   }
 }
 

@@ -1,3 +1,8 @@
+import {
+  AnimatedLeftToRight,
+  AnimatedRightToLeft,
+  AnimatedSection,
+} from "@/utils/motion";
 import { FooterButton } from "../Button/buttonCustom";
 
 const Footer = () => {
@@ -8,43 +13,61 @@ const Footer = () => {
         <div className="section-content">
           <div className="content">
             <div className="text-content">
-              <div className="figure" />
-              <p>Do you have any ideas?</p>
+              <AnimatedSection>
+                <div className="figure" />
+              </AnimatedSection>
+              <AnimatedSection>Do you have any ideas?</AnimatedSection>
             </div>
-            <p>Let&apos;s start a project together</p>
+            <AnimatedSection>
+              Let&apos;s start a project together
+            </AnimatedSection>
           </div>
+          <AnimatedSection>
+            <div className="underline-light" />
+          </AnimatedSection>
           <div className="footer-button-container">
             <a href="mailto:arisndk36@gmail.com" target="_blank">
-              <FooterButton>arisndk36@gmail.com</FooterButton>
+              <AnimatedSection>
+                <FooterButton>arisndk36@gmail.com</FooterButton>
+              </AnimatedSection>
             </a>
-            <a href="https://web.whatsapp.com/send/?phone=6288210508008&text&type=phone_number&app_absent=0" target="_blank">
-              <FooterButton>+ 62 882 1050 8008</FooterButton>
+            <a
+              href="https://web.whatsapp.com/send/?phone=6288210508008&text&type=phone_number&app_absent=0"
+              target="_blank"
+            >
+              <AnimatedSection>
+                <FooterButton>+ 62 882 1050 8008</FooterButton>
+              </AnimatedSection>
             </a>
           </div>
         </div>
         <div className="footer-end">
-          <div className="text-footer-end">
-            <p>Version</p>
-            <span>© 2023 Ari Sandika. Based in Tangerang</span>
-          </div>
-          <div className="text-footer-end">
-            <p>Social</p>
-            <div className="social-footer">
-              <a href="https://www.instagram.com/arisndka/" target="_blank">
-                Instagram
-              </a>
-              <a href="https://github.com/arisandika" target="_blank">
-                Github
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ari-sandika/"
-                target="_blank"
-              >
-                Linkedin
-              </a>
-              <a href="#">Resume</a>
+          <AnimatedLeftToRight>
+            <div className="text-footer-end">
+              <p>Version</p>
+              <span>© 2023 Ari Sandika. Based in Tangerang</span>
             </div>
-          </div>
+          </AnimatedLeftToRight>
+          <AnimatedRightToLeft>
+            <div className="text-footer-end">
+              <p>Social</p>
+              <div className="social-footer">
+                <a href="https://www.instagram.com/arisndka/" target="_blank">
+                  Instagram
+                </a>
+                <a href="https://github.com/arisandika" target="_blank">
+                  Github
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ari-sandika/"
+                  target="_blank"
+                >
+                  Linkedin
+                </a>
+                <a href="#">Resume</a>
+              </div>
+            </div>
+          </AnimatedRightToLeft>
         </div>
       </div>
     </>

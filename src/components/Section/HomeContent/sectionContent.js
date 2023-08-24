@@ -1,7 +1,10 @@
-import React from "react";
 import Link from "next/link";
-import AnimatedSection from "@/utils/motion";
 import { CustomButton } from "../../Button/buttonCustom";
+import {
+  AnimatedLeftToRight,
+  AnimatedRightToLeft,
+  AnimatedSection,
+} from "@/utils/motion";
 
 const SectionContent = () => {
   return (
@@ -22,17 +25,17 @@ const SectionContent = () => {
             interactions across devices of all sizes.
           </AnimatedSection>
           <div className="grid-3">
-            <AnimatedSection>
+            <AnimatedLeftToRight>
               I recognize that my path in web development is just beginning. I
               am devoted to continual exploration and skill enhancement,
               committed to staying at the forefront of emerging technologies.
-            </AnimatedSection>
+            </AnimatedLeftToRight>
             <div className="grid-4">
-              <AnimatedSection>
+              <AnimatedRightToLeft>
                 <Link href="/about">
                   <CustomButton>More about me</CustomButton>
                 </Link>
-              </AnimatedSection>
+              </AnimatedRightToLeft>
             </div>
           </div>
         </div>

@@ -1,5 +1,8 @@
-import AnimatedSection from "@/utils/motion";
-import React from "react";
+import {
+  AnimatedLeftToRight,
+  AnimatedRightToLeft,
+  AnimatedSection,
+} from "@/utils/motion";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 
 const AboutContent = () => {
@@ -15,13 +18,15 @@ const AboutContent = () => {
             Developer
           </AnimatedSection>
           <ParallaxProvider>
-            <ParallaxBanner
-              layers={[
-                { image: "/images/profile/ari-figure.png", speed: -20 },
-                { image: "/images/profile/ari-figure.png", speed: -10 },
-              ]}
-              className="about-img-1"
-            ></ParallaxBanner>
+            <AnimatedSection>
+              <ParallaxBanner
+                layers={[
+                  { image: "/images/profile/ari-figure.png", speed: -20 },
+                  { image: "/images/profile/ari-figure.png", speed: -10 },
+                ]}
+                className="about-img-1"
+              ></ParallaxBanner>
+            </AnimatedSection>
           </ParallaxProvider>
           <div className="text-about">
             <AnimatedSection>
@@ -50,7 +55,7 @@ const AboutContent = () => {
         <div className="services-col">
           <AnimatedSection>Services</AnimatedSection>
           <div className="text-services">
-            <h3 className="text-lg">
+            <h3 className="text-base">
               <AnimatedSection>Front End Development</AnimatedSection>
             </h3>
             <AnimatedSection>
@@ -58,9 +63,12 @@ const AboutContent = () => {
               ensure a seamless alignment with the design, putting a spotlight
               on micro animations, transitions, and interactive elements.
             </AnimatedSection>
+            <AnimatedSection>
+              <div className="underline"/>
+            </AnimatedSection>
           </div>
           <div className="text-services">
-            <h3 className="text-lg">
+            <h3 className="text-base">
               <AnimatedSection>Design</AnimatedSection>
             </h3>
             <AnimatedSection>
@@ -68,6 +76,9 @@ const AboutContent = () => {
               I bring forth impactful and user-centric digital designs. I firmly
               believe that a strong company branding forms the bedrock of every
               successful website.
+            </AnimatedSection>
+            <AnimatedSection>
+              <div className="underline" />
             </AnimatedSection>
           </div>
         </div>
@@ -80,20 +91,22 @@ const AboutContent = () => {
           <AnimatedSection>Personal Interest</AnimatedSection>
           <div className="grid-personal-2">
             <ParallaxProvider>
-              <ParallaxBanner
-                layers={[
-                  { image: "/images/profile/ari-music.jpg", speed: -20 },
-                  { image: "/images/profile/ari-music.jpg", speed: -10 },
-                ]}
-                className="personal-img-1"
-              ></ParallaxBanner>
+              <AnimatedLeftToRight>
+                <ParallaxBanner
+                  layers={[
+                    { image: "/images/profile/ari-music.jpg", speed: -20 },
+                    { image: "/images/profile/ari-music.jpg", speed: -10 },
+                  ]}
+                  className="personal-img-1"
+                ></ParallaxBanner>
+              </AnimatedLeftToRight>
             </ParallaxProvider>
-            <AnimatedSection>
+            <AnimatedRightToLeft>
               Beyond the screen, I&apos;m a music enthusiast who has even delved
               into digital music production. This artistic side of me fuels my
               creative approach to design, making every project an opportunity
               to craft interactive and problem-solving solutions.
-            </AnimatedSection>
+            </AnimatedRightToLeft>
           </div>
         </div>
       </div>

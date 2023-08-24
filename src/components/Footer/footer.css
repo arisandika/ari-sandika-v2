@@ -9,18 +9,25 @@
   min-height: 100vh;
   color: var(--light);
   background-color: var(--dark);
+  overflow: hidden;
 }
 
 .section-content {
   width: 100%;
 }
 
+.underline-light {
+  z-index: 10;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--light);
+}
+
 .content {
   padding-top: 2rem;
   padding-bottom: 2.5rem;
   margin-top: 0;
-  border-bottom-width: 1px;
-  border-color: var(--light);
   font-size: 1.875rem;
   line-height: 2.25rem;
 }

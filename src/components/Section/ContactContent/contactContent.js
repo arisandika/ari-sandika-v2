@@ -1,5 +1,4 @@
-import AnimatedSection from "@/utils/motion";
-import React from "react";
+import { AnimatedSection } from "@/utils/motion";
 
 const ContactContent = () => {
   return (

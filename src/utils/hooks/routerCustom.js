@@ -30,21 +30,14 @@ export const CustomCanvasLink = ({ href, title, className = "", toggle }) => {
 
 export const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
-
-  const isHomePage = router.pathname === "/";
-
+  
   return (
-    <Link
-      href={href}
-      className={`nav-link group ${
-        isHomePage ? "nav-link-light" : "nav-link-dark"
-      }`}
-    >
+    <Link href={href} className={`nav-link group nav-link-dark`}>
       {title}
       <span
-        className={`nav-link-path group-hover:h-[4px] group-hover:w-[4px] select-none ${
-          isHomePage ? "nav-path-bg-light" : "nav-path-bg-dark"
-        } ${router.asPath === href ? "nav-path-on" : "nav-path-off"}`}
+        className={`nav-link-path group-hover:h-[4px] group-hover:w-[4px] select-none nav-path-bg-dark ${
+          router.asPath === href ? "nav-path-on" : "nav-path-off"
+        }`}
       >
         &nbsp;
       </span>

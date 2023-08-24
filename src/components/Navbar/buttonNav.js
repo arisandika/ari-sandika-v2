@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CustomCanvasLink } from "@/utils/hooks/routerCustom";
 import styled from "@/utils/styled";
 import { useRouter } from "next/router";
+import { AnimatedRi, AnimatedRightToLeft, AnimatedRightToLeftghtToLeftAnimatedRightToLeft } from "@/utils/motion";
 
 const ButtonNav = () => {
   const router = useRouter();
@@ -32,28 +33,13 @@ const ButtonNav = () => {
         <div className={`btn-nav`}>
           <Link
             href="/"
-            className={`btn-nav-logo ${
-              bgNav
-                ? `btn-nav-logo-dark`
-                : `${
-                    isOpen
-                      ? `${
-                          router.pathname === "/"
-                            ? "nav-logo-dark btn-nav-logo-dark"
-                            : "nav-logo-dark btn-nav-logo-dark"
-                        }`
-                      : `${
-                          router.pathname === "/"
-                            ? "nav-logo-light"
-                            : "nav-logo-dark btn-nav-logo-dark"
-                        }`
-                  } `
-            }`}
+            className={`btn-nav-logo btn-nav-logo-dark 
+            `}
           >
             Ari Sandika
           </Link>
           <button
-            className={`button-circle hover:scale-105 ${
+            className={`button-circle ${
               isOpen ? `button-cirle-closed hover:rotate-90` : ""
             }`}
             onClick={handleClick}
@@ -85,29 +71,37 @@ const ButtonNav = () => {
         >
           <div className={`text-canvas`}>
             Menu
-            <span className={`text-sideline`}>&nbsp;</span>
+            <span className={`text-sideline`} />
           </div>
           <div className="canvas-link-container space-y-3">
-            <CustomCanvasLink href="/" title="Home" toggle={handleClick} />
-            <CustomCanvasLink
-              href="/projects"
-              title="Projects"
-              toggle={handleClick}
-            />
-            <CustomCanvasLink
-              href="/about"
-              title="About"
-              toggle={handleClick}
-            />
-            <CustomCanvasLink
-              href="/contact"
-              title="Contact"
-              toggle={handleClick}
-            />
+            <AnimatedRightToLeft delay={0.1}>
+              <CustomCanvasLink href="/" title="Home" toggle={handleClick} />
+            </AnimatedRightToLeft>
+            <AnimatedRightToLeft delay={0.2}>
+              <CustomCanvasLink
+                href="/projects"
+                title="Projects"
+                toggle={handleClick}
+              />
+            </AnimatedRightToLeft>
+            <AnimatedRightToLeft delay={0.3}>
+              <CustomCanvasLink
+                href="/about"
+                title="About"
+                toggle={handleClick}
+              />
+            </AnimatedRightToLeft>
+            <AnimatedRightToLeft delay={0.4}>
+              <CustomCanvasLink
+                href="/contact"
+                title="Contact"
+                toggle={handleClick}
+              />
+            </AnimatedRightToLeft>
           </div>
           <div className={`text-canvas`}>
             Social
-            <span className={`text-sideline`}>&nbsp;</span>
+            <span className={`text-sideline`} />
           </div>
           <div className={`link-social`}>
             <a href="https://www.instagram.com/arisndka/" target="_blank">

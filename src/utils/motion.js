@@ -29,7 +29,7 @@ export const buttonVariants = {
   },
 };
 
-export const headerVariants = {
+export const leftToRightVariants = {
   initial: { opacity: 0, x: -100 },
   animate: {
     opacity: 1,
@@ -54,8 +54,67 @@ const AnimatedSection = ({ children }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 40 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 80 }}
+      transition={{ duration: 0.8 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const AnimatedLeftToRight = ({ children, delay }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
+      transition={{ duration: 0.9, delay: delay || 0 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const AnimatedRightToLeft = ({ children, delay }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 100 }}
+      transition={{ duration: 0.9, delay: delay || 0 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const AnimatedTopToBottom = ({ children }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  const isMobileView = typeof window !== "undefined" && window.innerWidth < 768;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: isMobileView ? 1 : 0, y: isMobileView ? 0 : -100 }} // Adjust initial y based on mobile view
+      animate={{
+        opacity: inView ? 1 : isMobileView ? 1 : 0,
+        y: inView ? 0 : isMobileView ? 0 : -30,
+      }} 
       transition={{ duration: 0.5 }}
     >
       {children}
@@ -63,4 +122,9 @@ const AnimatedSection = ({ children }) => {
   );
 };
 
-export default AnimatedSection;
+export {
+  AnimatedSection,
+  AnimatedLeftToRight,
+  AnimatedRightToLeft,
+  AnimatedTopToBottom,
+};

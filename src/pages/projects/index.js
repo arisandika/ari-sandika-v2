@@ -1,6 +1,6 @@
 import ProjectsContent from "@/components/Section/ProjectContent/projectsContent";
 import Layout from "@/components/layout";
-import AnimatedSection from "@/utils/motion";
+import { AnimatedSection } from "@/utils/motion";
 
 export default function Projects() {
   return (
@@ -14,6 +14,11 @@ export default function Projects() {
               </AnimatedSection>
             </h1>
           </div>
+          <AnimatedSection>
+            <div className="md:px-[22px]">
+              <div className="underline" />
+            </div>
+          </AnimatedSection>
           <ProjectsContent />
         </div>
       </Layout>
